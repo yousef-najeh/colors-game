@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn6il4ufkqk2w"]
+
+[ext_resource type="Texture2D" uid="uid://c6nuimoojh8bt" path="res://sprites/assesst/tile_0014.png" id="1_f7ehx"]
+[ext_resource type="Script" uid="uid://d2ilsk5yqnx06" path="res://scens/donat.gd" id="1_s5ijn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s5ijn"]
+
+[node name="donat" type="Area2D"]
+script = ExtResource("1_s5ijn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_f7ehx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s5ijn")

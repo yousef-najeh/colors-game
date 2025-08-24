@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://duubjerl71vg3"]
+[gd_scene load_steps=23 format=3 uid="uid://duubjerl71vg3"]
 
 [ext_resource type="Texture2D" uid="uid://dmleftespicaj" path="res://assets/sprites/background/background_clouds.png" id="1_ig68k"]
 [ext_resource type="Texture2D" uid="uid://vkdai4pcgqxk" path="res://assets/sprites/enemy/slime_normal_flat.png" id="2_ohuaj"]
@@ -14,8 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0f6ngttqnhjk" path="res://assets/sprites/enemy/tile_0013.png" id="12_1kqeu"]
 [ext_resource type="Texture2D" uid="uid://u6j3xjedgc8l" path="res://assets/sprites/enemy/tile_0014.png" id="13_hv0ol"]
 [ext_resource type="Texture2D" uid="uid://c1bq736j0r6q5" path="res://assets/sprites/map/tilemap_packed.png" id="14_0g51l"]
-[ext_resource type="Texture2D" uid="uid://dfjhfc4opso7q" path="res://assets/sprites/Characters/106-Civilian06.webp" id="15_2pjva"]
-[ext_resource type="Script" uid="uid://bgdwow3wndnjb" path="res://character_body_2d.gd" id="15_ohuaj"]
+[ext_resource type="PackedScene" uid="uid://2dwglsfv3fu1" path="res://scens/Player.tscn" id="16_ohuaj"]
 [ext_resource type="Texture2D" uid="uid://xpgbv51nypup" path="res://sprites/assesst/tilemap_packed2.png" id="17_1eqtx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ykjn"]
@@ -496,78 +495,6 @@ texture_region_size = Vector2i(18, 18)
 sources/0 = SubResource("TileSetScenesCollectionSource_1eqtx")
 sources/1 = SubResource("TileSetAtlasSource_g187t")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y1m4r"]
-atlas = ExtResource("15_2pjva")
-region = Rect2(0, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kdt2t"]
-atlas = ExtResource("15_2pjva")
-region = Rect2(32, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fj1w2"]
-atlas = ExtResource("15_2pjva")
-region = Rect2(64, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iwq05"]
-atlas = ExtResource("15_2pjva")
-region = Rect2(96, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hsda1"]
-atlas = ExtResource("15_2pjva")
-region = Rect2(0, 96, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s74wr"]
-atlas = ExtResource("15_2pjva")
-region = Rect2(32, 96, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_epqs3"]
-atlas = ExtResource("15_2pjva")
-region = Rect2(64, 96, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d5dyd"]
-atlas = ExtResource("15_2pjva")
-region = Rect2(96, 96, 32, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tt02y"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y1m4r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kdt2t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fj1w2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iwq05")
-}],
-"loop": true,
-"name": &"walk backward",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hsda1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s74wr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_epqs3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d5dyd")
-}],
-"loop": true,
-"name": &"walk forward",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eqtx"]
-size = Vector2(20, 42)
-
 [node name="Node2D" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -720,18 +647,5 @@ tile_set = SubResource("TileSet_5lest")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 720897, 3, -65536, 720897, 3, -131072, 720897, 3, -196608, 720897, 2, 131077, 851969, 3, 131078, 851969, 3, 131079, 851969, 3, 131080, 851969, 3, 131081, 851969, 3, 131082, 851969, 3, 131083, 851969, 3, 131084, 851969, 3, 131085, 851969, 3, 131086, 851969, 3, 131087, 851969, 3, 196613, 851969, 3, 196614, 851969, 3, 196615, 851969, 3, 196616, 851969, 3, 196617, 851969, 3, 196618, 851969, 3, 196619, 851969, 3, 196620, 851969, 3, 196621, 851969, 3, 196622, 851969, 3, 262149, 851969, 3, 262150, 851969, 3, 262151, 851969, 3, 262152, 851969, 3, 262153, 851969, 3, 262154, 851969, 3, 262155, 851969, 3, 262156, 851969, 3, 262157, 851969, 3, 262158, 851969, 3, 262159, 851969, 3, 327692, 851969, 3, 327693, 851969, 3, 327694, 851969, 3, 327691, 851969, 3, 327690, 851969, 3, 327689, 851969, 3, 327688, 851969, 3, 327687, 851969, 3, 327686, 851969, 3, 327685, 851969, 3, 65541, 851969, 2, 65542, 851969, 2, 65543, 851969, 2, 65544, 851969, 2, 65545, 851969, 2, 65546, 851969, 2, 65547, 851969, 2, 65548, 851969, 2, 65549, 851969, 2, 65550, 851969, 2, 65551, 851969, 2, 65552, 851969, 2, 65553, 851969, 2, 65554, 851969, 2, 65555, 851969, 2, 65556, 851969, 2, 65557, 851969, 2, 65558, 851969, 2, 65559, 851969, 2, 65560, 851969, 2, 65561, 851969, 2, 65562, 851969, 2, 65563, 851969, 2, 65564, 851969, 2, 65565, 851969, 2, 65566, 851969, 2, 65567, 851969, 2, 65568, 851969, 2, 65569, 851969, 2, 65570, 851969, 2, 65571, 851969, 2, 65572, 851969, 2, 65573, 851969, 2, 131088, 851969, 3, 131089, 851969, 3, 131090, 851969, 3, 131091, 851969, 3, 131092, 851969, 3, 131093, 851969, 3, 131094, 851969, 3, 131095, 851969, 3, 131096, 851969, 3, 131097, 851969, 3, 131098, 851969, 3, 131099, 851969, 3, 131100, 851969, 3, 131101, 851969, 3, 131102, 851969, 3, 131103, 851969, 3, 131104, 851969, 3, 131105, 851969, 3, 131106, 851969, 3, 131107, 851969, 3, 131108, 851969, 3, 131109, 851969, 3, 196645, 851969, 3, 196644, 851969, 3, 196643, 851969, 3, 196642, 851969, 3, 196641, 851969, 3, 196640, 851969, 3, 196639, 851969, 3, 196638, 851969, 3, 196637, 851969, 3, 196636, 851969, 3, 196635, 851969, 3, 196634, 851969, 3, 196633, 851969, 3, 196632, 851969, 3, 196631, 851969, 3, 196630, 851969, 3, 196629, 851969, 3, 196628, 851969, 3, 196627, 851969, 3, 196626, 851969, 3, 196625, 851969, 3, 196624, 851969, 3, 196623, 851969, 3, 262160, 851969, 3, 262161, 851969, 3, 262162, 851969, 3, 262163, 851969, 3, 262164, 851969, 3, 262165, 851969, 3, 262166, 851969, 3, 262167, 851969, 3, 262168, 851969, 3, 262169, 851969, 3, 262170, 851969, 3, 262171, 851969, 3, 262172, 851969, 3, 262173, 851969, 3, 262174, 851969, 3, 262175, 851969, 3, 262176, 851969, 3, 262177, 851969, 3, 262178, 851969, 3, 262179, 851969, 3, 262180, 851969, 3, 262181, 851969, 3, 327717, 851969, 3, 327716, 851969, 3, 327715, 851969, 3, 327714, 851969, 3, 327713, 851969, 3, 327712, 851969, 3, 327711, 851969, 3, 327710, 851969, 3, 327709, 851969, 3, 327708, 851969, 3, 327707, 851969, 3, 327706, 851969, 3, 327705, 851969, 3, 327704, 851969, 3, 327703, 851969, 3, 327702, 851969, 3, 327701, 851969, 3, 327700, 851969, 3, 327699, 851969, 3, 327698, 851969, 3, 327697, 851969, 3, 327696, 851969, 3, 327695, 851969, 3, 131110, 851969, 3, 196647, 851969, 3, 262183, 851969, 3, 262182, 851969, 3, 196646, 851969, 3, 327718, 851969, 3, 327719, 851969, 3, 65574, 851969, 2, 65575, 851969, 2, 327684, 851969, 3, 262148, 851969, 3, 196612, 851969, 3, 131076, 851969, 3, 65540, 851969, 2, 131111, 851969, 3)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" parent="." instance=ExtResource("16_ohuaj")]
 position = Vector2(1, 0)
-script = ExtResource("15_ohuaj")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(241, -56)
-sprite_frames = SubResource("SpriteFrames_tt02y")
-animation = &"walk forward"
-frame_progress = 0.331546
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(241, -55)
-shape = SubResource("RectangleShape2D_1eqtx")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

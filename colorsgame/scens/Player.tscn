@@ -1,0 +1,100 @@
+[gd_scene load_steps=13 format=3 uid="uid://2dwglsfv3fu1"]
+
+[ext_resource type="Script" uid="uid://bgdwow3wndnjb" path="res://character_body_2d.gd" id="1_kfs4x"]
+[ext_resource type="Texture2D" uid="uid://dfjhfc4opso7q" path="res://assets/sprites/Characters/106-Civilian06.webp" id="2_civce"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1m4r"]
+atlas = ExtResource("2_civce")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdt2t"]
+atlas = ExtResource("2_civce")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj1w2"]
+atlas = ExtResource("2_civce")
+region = Rect2(64, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwq05"]
+atlas = ExtResource("2_civce")
+region = Rect2(96, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsda1"]
+atlas = ExtResource("2_civce")
+region = Rect2(0, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s74wr"]
+atlas = ExtResource("2_civce")
+region = Rect2(32, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epqs3"]
+atlas = ExtResource("2_civce")
+region = Rect2(64, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5dyd"]
+atlas = ExtResource("2_civce")
+region = Rect2(96, 96, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tt02y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1m4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdt2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj1w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwq05")
+}],
+"loop": true,
+"name": &"walk backward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsda1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s74wr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epqs3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5dyd")
+}],
+"loop": true,
+"name": &"walk forward",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eqtx"]
+size = Vector2(20, 42)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-215, 44)
+script = ExtResource("1_kfs4x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(241, -56)
+sprite_frames = SubResource("SpriteFrames_tt02y")
+animation = &"walk forward"
+frame_progress = 0.331546
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(240, -58)
+shape = SubResource("RectangleShape2D_1eqtx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(241, -56)
+zoom = Vector2(1.8, 1.8)
+limit_left = 0
+limit_top = -20
+limit_right = 2000
+limit_bottom = 1000
+limit_smoothed = true
+position_smoothing_enabled = true
