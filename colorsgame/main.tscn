@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://mmgjpun56wnf"]
+[gd_scene load_steps=18 format=3 uid="uid://mmgjpun56wnf"]
 
 [ext_resource type="Texture2D" uid="uid://nte5gl1hfmq7" path="res://sprites/assesst/tilemap.png" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://b2cawfgmuhv0b" path="res://sprites/assesst/tilemap_packed.png" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://xpgbv51nypup" path="res://sprites/assesst/tilemap_packed2.png" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://d38wcd24beufb" path="res://sprites/assesst/background_clouds.png" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://e3c0i8o5rqhq" path="res://character_body_2d.gd" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://dguornvlso3mt" path="res://sprites/assesst/106-Civilian06.webp" id="5_lquwl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
@@ -515,6 +516,8 @@ texture_region_size = Vector2i(18, 18)
 [sub_resource type="TileSet" id="TileSet_4c57u"]
 sources/0 = SubResource("TileSetAtlasSource_kek77")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
 atlas = ExtResource("5_lquwl")
 region = Rect2(0, 96, 32, 48)
@@ -568,7 +571,69 @@ tile_set = SubResource("TileSet_4c57u")
 format = 2
 layer_0/tile_data = PackedInt32Array(2162710, 851968, 1, 2162711, 851968, 1, 2162722, 851968, 1, 2162723, 851968, 1, 2293893, 851968, 1, 2293897, 851968, 1, 2359429, 851968, 3, 2424965, 851968, 3, 2490501, 851968, 3, 2556037, 851968, 3, 2556040, 851968, 3, 2556042, 851968, 3, 2556041, 851968, 3, 2556039, 851968, 3, 2556038, 851968, 3, 2490502, 851968, 3, 2424966, 851968, 3, 2359430, 851968, 3, 2359431, 851968, 3, 2359432, 851968, 3, 2359433, 851968, 3, 2359434, 851968, 3, 2424970, 851968, 3, 2490506, 851968, 3, 2490505, 851968, 3, 2490504, 851968, 3, 2490503, 851968, 3, 2424967, 851968, 3, 2424968, 851968, 3, 2424969, 851968, 3, 2228259, 851968, 3, 2228258, 851968, 3, 2293794, 851968, 3, 2359330, 851968, 3, 2424866, 851968, 3, 2490402, 851968, 3, 2490403, 851968, 3, 2555939, 851968, 3, 2555938, 851968, 3, 2424867, 851968, 3, 2359331, 851968, 3, 2293795, 851968, 3, 2228246, 851968, 3, 2293782, 851968, 3, 2359318, 851968, 3, 2424854, 851968, 3, 2490390, 851968, 3, 2490391, 851968, 3, 2555927, 851968, 3, 2424855, 851968, 3, 2359319, 851968, 3, 2293783, 851968, 3, 2228247, 851968, 3, 2555926, 851968, 3, 2097216, 851968, 3, 2097215, 851968, 3, 2162751, 851968, 3, 2228287, 851968, 3, 2228288, 851968, 3, 2162752, 851968, 3, 2293824, 851968, 3, 2359360, 851968, 3, 2359359, 851968, 3, 2359358, 851968, 3, 2359357, 851968, 3, 2293821, 851968, 3, 2228285, 851968, 3, 2162749, 851968, 3, 2097214, 851968, 3, 2097213, 851968, 3, 2162750, 851968, 3, 2228286, 851968, 3, 2293822, 851968, 3, 2293823, 851968, 3, 2293825, 851968, 3, 2293826, 851968, 3, 2228290, 851968, 3, 2162754, 851968, 3, 2097218, 851968, 3, 2097217, 851968, 3, 2162753, 851968, 3, 2228289, 851968, 3, 2359361, 851968, 3, 2359362, 851968, 3, 2031680, 851968, 1, 2031679, 851968, 1, 2555965, 851968, 3, 2555966, 851968, 3, 2555967, 851968, 3, 2555968, 851968, 3, 2555969, 851968, 3, 2555970, 851968, 3, 2490434, 851968, 3, 2424898, 851968, 3, 2424897, 851968, 3, 2424896, 851968, 3, 2424895, 851968, 3, 2424894, 851968, 3, 2424893, 851968, 3, 2490429, 851968, 3, 2490430, 851968, 3, 2490431, 851968, 3, 2490432, 851968, 3, 2490433, 851968, 3)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="burger" type="Area2D" parent="." groups=["Burger"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="burger"]
+texture = ExtResource("1_h2yge")
+region_enabled = true
+region_rect = Rect2(194, 101, 12, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="burger"]
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="cup" type="Area2D" parent="." groups=["Cup"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="cup"]
+texture = ExtResource("1_h2yge")
+region_enabled = true
+region_rect = Rect2(40, 97, 15, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cup"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("5_7mycd")
+
+[node name="player" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(28, 474)
 sprite_frames = SubResource("SpriteFrames_4c57u")
 frame_progress = 0.32592
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+
+[node name="candy" type="Area2D" parent="." groups=["Candy"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="candy"]
+texture = ExtResource("1_h2yge")
+region_enabled = true
+region_rect = Rect2(174, 3, 14, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="candy"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="candy"]
+texture = ExtResource("1_h2yge")
+region_enabled = true
+region_rect = Rect2(155, 2, 13, 14)
+
+[node name="Sprite2D3" type="Sprite2D" parent="candy"]
+texture = ExtResource("1_h2yge")
+region_enabled = true
+region_rect = Rect2(173, 38, 17, 16)
+
+[node name="candel" type="Sprite2D" parent="candy"]
+texture = ExtResource("1_h2yge")
+region_enabled = true
+region_rect = Rect2(22, 96, 13, 18)
+
+[node name="candel2" type="Sprite2D" parent="candy"]
+texture = ExtResource("1_h2yge")
+region_enabled = true
+region_rect = Rect2(4, 96, 13, 17)
+
+[node name="waiter" type="Sprite2D" parent="candy"]
+texture = ExtResource("3_lquwl")
+region_enabled = true
+region_rect = Rect2(235, 21, 18, 17)
+
+[connection signal="body_entered" from="burger" to="CharacterBody2D" method="_on_burger_body_entered"]
+[connection signal="body_entered" from="cup" to="CharacterBody2D" method="_on_cup_body_entered"]
+[connection signal="body_entered" from="candy" to="CharacterBody2D" method="_on_candy_body_entered"]
