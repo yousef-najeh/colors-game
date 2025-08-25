@@ -50,6 +50,6 @@ A small, student-built platformer set in a candy world.
 3. Run the main scene (Level 1) or open and play each level directly.
 
 ```bash
-git clone https://github.com/<your-user>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/colors-game/colors-game.git
+cd colors-game
 # Open with Godot 4.x and press ▶
