@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://2dwglsfv3fu1"]
 
-[ext_resource type="Script" uid="uid://bgdwow3wndnjb" path="res://character_body_2d.gd" id="1_kfs4x"]
+[ext_resource type="Script" uid="uid://bgdwow3wndnjb" path="res://scripts/character_body_2d.gd" id="1_kfs4x"]
 [ext_resource type="Texture2D" uid="uid://dfjhfc4opso7q" path="res://assets/sprites/Characters/106-Civilian06.webp" id="2_civce"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1m4r"]
