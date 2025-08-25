@@ -89,12 +89,6 @@ frame_progress = 0.331546
 position = Vector2(240, -58)
 shape = SubResource("RectangleShape2D_1eqtx")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(241, -56)
-zoom = Vector2(1.8, 1.8)
-limit_left = 0
-limit_top = -20
-limit_right = 2000
-limit_bottom = 1000
-limit_smoothed = true
-position_smoothing_enabled = true
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(237, -59)
+zoom = Vector2(1.5, 1.5)
