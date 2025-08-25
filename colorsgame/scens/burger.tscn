@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcwario55pqxx"]
+
+[ext_resource type="Texture2D" uid="uid://bjsacp8py1bci" path="res://sprites/assesst/tile_0092.png" id="1_5m3ge"]
+[ext_resource type="Script" uid="uid://diwf1lp3gfub2" path="res://scripts/burger.gd" id="1_28hg2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ch4k3"]
+
+[node name="burger" type="Area2D" groups=["burger"]]
+script = ExtResource("1_28hg2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5m3ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ch4k3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
