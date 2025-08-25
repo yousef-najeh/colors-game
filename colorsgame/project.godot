@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="colorsGame"
-run/main_scene="uid://mmgjpun56wnf"
+run/main_scene="uid://bug8hsh8wqg06"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
