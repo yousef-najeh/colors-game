@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bug8hsh8wqg06"]
+[gd_scene load_steps=22 format=3 uid="uid://bug8hsh8wqg06"]
 
 [ext_resource type="Texture2D" uid="uid://dmleftespicaj" path="res://assets/sprites/background/background_clouds.png" id="1_85g1y"]
 [ext_resource type="Script" uid="uid://c7wyqxbm846aw" path="res://scripts/level_1.gd" id="1_nadcg"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bjsacp8py1bci" path="res://sprites/assesst/tile_0092.png" id="8_o6bqb"]
 [ext_resource type="Script" uid="uid://diwf1lp3gfub2" path="res://scripts/burger.gd" id="9_codgh"]
 [ext_resource type="Script" uid="uid://bd35ihsa8ldmh" path="res://scripts/level-2-gate.gd" id="11_codgh"]
+[ext_resource type="Script" uid="uid://di35qrkxb01um" path="res://scens/UI.gd" id="12_8e0kj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
 texture = ExtResource("2_38cex")
@@ -475,13 +476,15 @@ distance = -2.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e0kj"]
 size = Vector2(20, 203)
 
+[sub_resource type="NobodyWhoSampler" id="NobodyWhoSampler_8e0kj"]
+
 [node name="main" type="Node2D" node_paths=PackedStringArray("score_display")]
 script = ExtResource("1_nadcg")
 score_display = NodePath("CanvasLayer/score_display")
 
 [node name="BackgroundClouds" type="Sprite2D" parent="."]
-position = Vector2(1030, 188)
-scale = Vector2(9.42188, 3.97656)
+position = Vector2(824.5, 126)
+scale = Vector2(11.0273, 4.46094)
 texture = ExtResource("1_85g1y")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -637,6 +640,18 @@ shape = SubResource("CircleShape2D_8e0kj")
 [node name="CharacterBody2D" parent="." groups=["player"] instance=ExtResource("6_lnj2d")]
 position = Vector2(-218, 121)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D" node_paths=PackedStringArray("message_label")]
+script = ExtResource("12_8e0kj")
+message_label = NodePath("message_label")
+
+[node name="message_label" type="Label" parent="CharacterBody2D/CanvasLayer"]
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 95.0
+offset_bottom = 30.0
+theme = SubResource("Theme_3ioej")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
 [node name="level 1" type="Label" parent="."]
 offset_left = 1645.0
 offset_top = 25.0
@@ -675,6 +690,14 @@ script = ExtResource("11_codgh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-9, -88.5)
 shape = SubResource("RectangleShape2D_8e0kj")
+
+[node name="NobodyWhoModel" type="NobodyWhoModel" parent="."]
+model_path = "gemma-2-2b-it-Q4_K_M.gguf"
+
+[node name="NobodyWhoChat" type="NobodyWhoChat" parent="NobodyWhoModel" node_paths=PackedStringArray("model_node")]
+model_node = NodePath("..")
+sampler = SubResource("NobodyWhoSampler_8e0kj")
+system_prompt = "You are a fun game narrator. Respond with one brief, playful sentence to each event if the the player eat burger interact with  him  the burger givers 1 point  if he eats a donat the donat makes him lose 1 point so cheer him up or tell him to be carful or why the donats are bad "
 
 [connection signal="body_entered" from="burgers/burger" to="." method="_on_burger_body_entered"]
 [connection signal="body_entered" from="burgers/burger" to="burgers/burger" method="_on_body_entered"]
