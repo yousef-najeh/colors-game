@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://vlfyjp5pdtwc"]
+
+[ext_resource type="Texture2D" uid="uid://b0f6ngttqnhjk" path="res://assets/sprites/enemy/tile_0013.png" id="1_k4eq3"]
+[ext_resource type="Script" uid="uid://by8rjqyhm5htr" path="res://scripts/fish.gd" id="1_ooffg"]
+[ext_resource type="Texture2D" uid="uid://u6j3xjedgc8l" path="res://assets/sprites/enemy/tile_0014.png" id="2_ooffg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ouav7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_k4eq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ooffg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4eq3"]
+size = Vector2(12, 19)
+
+[node name="fish" type="Area2D"]
+script = ExtResource("1_ooffg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ouav7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_k4eq3")

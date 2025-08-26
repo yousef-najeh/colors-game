@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn4rlrr2kg4uq"]
+
+[ext_resource type="Script" uid="uid://s7tsj36u4qqc" path="res://scripts/candle.gd" id="1_svmsh"]
+[ext_resource type="Texture2D" uid="uid://bo2v6dcighfpl" path="res://assets/sprites/enemy/wax2-removebg-preview.png" id="1_vcjee"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svmsh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vcjee")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rk7aa"]
+radius = 5.0
+height = 36.0
+
+[node name="candle" type="Area2D"]
+script = ExtResource("1_svmsh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(18.75, 6)
+scale = Vector2(0.109, 0.0666087)
+sprite_frames = SubResource("SpriteFrames_svmsh")
+frame_progress = 0.836477
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, 7)
+shape = SubResource("CapsuleShape2D_rk7aa")
